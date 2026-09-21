@@ -123,9 +123,9 @@ main {
 }
 
 .loading-spinner {
-  color: white;
-  font-family: "Figtree";
-  text-align: center;
+  height: 90px;
+  scale: 3;
+  display: block;
 }
 
 .pokemon-card-name {

@@ -150,18 +150,20 @@ function setLoading(loading) {
 
   let spinner = document.querySelector(".loading-spinner");
   if (loading && !spinner) {
-    spinner = document.createElement("p");
+    spinner = document.createElement("img");
     spinner.className = "loading-spinner";
-    spinner.textContent = "Lade Pokémon...";
+    spinner.src = "./assets/img/loading.gif"
     galleryRef.after(spinner);
   } else if (!loading && spinner) {
     spinner.remove();
   }
 }
 
-function loadMore() {
+async function loadMore() {
   if (isLoading) return;
-  loadPokemons();
+  setLoading(true);
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await loadPokemons();
 }
 //---------------------------------------------------------------------
 
