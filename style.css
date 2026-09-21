@@ -63,6 +63,24 @@ main {
   padding: 40px 20px;
 }
 
+.search-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.search-hint{
+  font-family: "Figtree";
+  font-size: 0.75rem;
+  color: red;
+  text-align: left;
+  visibility: hidden;
+}
+
+.search-hint.error{
+  visibility: visible;
+}
+
 .search-bar {
   display: flex;
   gap: 8px;

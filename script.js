@@ -165,11 +165,23 @@ function loadMore() {
 }
 //---------------------------------------------------------------------
 
+function toggleSearchHint(show) {
+  const hint = document.querySelector(".search-hint");
+  hint.classList.toggle("error", show);
+}
+
 function searchPokemon() {
   const query = document
     .querySelector('[data-id="search-input"]')
     .value.trim()
     .toLowerCase();
+
+  if (query.length > 0 && query.length < 3){
+    toggleSearchHint(true);
+    return;
+  }
+
+  toggleSearchHint(false);
 
   visiblePokemon = query
     ? allPokemon.filter((p) => p.name.includes(query))
@@ -178,6 +190,13 @@ function searchPokemon() {
   renderCards(visiblePokemon);
   toggleNotFound(visiblePokemon.length === 0);
 }
+
+document.querySelector('[data-id="search-input"]').addEventListener("input", (e) => {
+  const query = e.target.value.trim();
+  if (query.length === 0 || query.length >= 3) {
+    toggleSearchHint(false);
+  }
+});
 
 document.querySelector('[data-id="search-input"]').addEventListener("keydown", (e) => {
   if (e.key === "Enter") searchPokemon();
