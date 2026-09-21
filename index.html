@@ -16,7 +16,7 @@
         <div class="search-wrapper">
         <div class="search-bar">
             <input type="text" data-id="search-input" placeholder="Search..." />
-            <button data-id="search-button" onclick="searchPokemon()" aria-label="Suchen">🔍</button>
+            <button data-id="search-button" onclick="searchPokemon()" aria-label="search Pokemon">🔍</button>
         </div>
         <p class="search-hint">min. 3 letters</p>
         </div>
@@ -27,7 +27,7 @@
     
         <div id="gallery" class="photo-grid"></div>
 
-        <button data-id="load-more-button" class="load-more-button" onclick="loadMore()">
+        <button data-id="load-more-button" class="load-more-button" onclick="loadMore()" aria-label="load more Pokemon">
           Load More
         </button>
       </section>
@@ -37,6 +37,7 @@
       data-id="dialog"
       id="slideshow"
       aria-labelledby="dialogTitle"
+      aria-label="Pokémon details"
       class="photoshow"
       onclick="closeDialog()"
     >
@@ -61,19 +62,19 @@
         <div class="dialog-types" id="dialogTypes"></div>
 
         <div class="dialog-tabs">
-          <button class="tab-button" data-tab="main" onclick="switchTab('main')">Main</button>
-          <button class="tab-button" data-tab="stats" onclick="switchTab('stats')">Stats</button>
-          <button class="tab-button" data-tab="evo-chain" onclick="switchTab('evo-chain')">Evo chain</button>
+          <button class="tab-button" data-tab="main" onclick="switchTab('main')" aria-label="show main information">Main</button>
+          <button class="tab-button" data-tab="stats" onclick="switchTab('stats')" aria-label="show stats information">Stats</button>
+          <button class="tab-button" data-tab="evo-chain" onclick="switchTab('evo-chain')" aria-label="show evolution information">Evo chain</button>
         </div>
 
         <div class="dialog-tab-content" id="dialogTabContent"></div>
 
         <footer class="footer-dialog">
-          <button onclick="changeImg(-1)" class="prev-img" data-id="prev-button">
+          <button onclick="changeImg(-1)" class="prev-img" data-id="prev-button" aria-label="show prev Pokemon">
             <img src="./assets/img/back.png" alt="button-back" />
           </button>
           <span id="img-counter" class="counter-text">1/40</span>
-          <button onclick="changeImg(1)" class="next-img" data-id="next-button">
+          <button onclick="changeImg(1)" class="next-img" data-id="next-button" aria-label="show next Pokemon">
             <img src="./assets/img/next.png" alt="button-next" />
           </button>
         </footer>
