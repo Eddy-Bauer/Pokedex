@@ -290,6 +290,7 @@ h1 {
 #dialogImg {
   max-height: 250px;
   object-fit: contain;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.6));
 }
 
 #dialogTitle {
@@ -455,6 +456,12 @@ dialog::backdrop {
   width: 160px;
   height: 160px;
   object-fit: contain;
+  transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card:hover .card-image{
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.6));
+  transform: scale(1.05);
 }
 
 .card-footer {
